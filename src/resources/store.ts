@@ -2,4 +2,9 @@
     import type { task } from "./types";
 
 //VARIABLES
-    let tasks = $state<task[]>([])
+    export let tasks = $state<task[]>([])
+
+//FUNCTIONS
+    export const add = (newTask: task) => {
+        tasks.push(newTask);
+    }
