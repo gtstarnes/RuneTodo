@@ -1,11 +1,11 @@
 //IMPORTS
-    import type { task } from "./types";
+    import type { Task } from "./types";
 
 //VARIABLES
-    let tasks = $state<task[]>([])
+    let tasks = $state<Task[]>([])
 
 //FUNCTIONS
-    const add = (newTask: task) => { // adds new task to tasks
+    const add = (newTask: Task) => { // adds new task to tasks
         tasks.push(newTask);
     }
     const del = (task: string) => { // deletes task from tasks
