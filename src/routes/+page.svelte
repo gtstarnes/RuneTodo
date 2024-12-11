@@ -6,7 +6,6 @@
 
 <section>
     <Controls />
-    <div>Hello</div>
 </section>
 
 <style>
