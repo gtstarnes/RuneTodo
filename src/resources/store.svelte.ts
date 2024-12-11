@@ -2,7 +2,7 @@
     import type { Task } from "./types";
 
 //VARIABLES
-    let tasks = $state<Task[]>([])
+    const tasks = $state<Task[]>([])
 
 //EXPORTS
 export {tasks}
