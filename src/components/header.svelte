@@ -12,5 +12,11 @@
 </header>
 
 <style>
-
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav {
+        display: flex;
+    }
 </style>
