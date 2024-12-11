@@ -2,12 +2,14 @@
 //IMPORTS
 	import Footer from "../components/footer.svelte";
     import Header from "../components/header.svelte";
+//VARIABLES
+    let {children} = $props();
 </script>
 
 
 <main>
     <Header />
-    <slot></slot>
+    {@render children()}
     <Footer />
 </main>
 
