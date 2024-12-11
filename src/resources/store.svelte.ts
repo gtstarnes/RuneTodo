@@ -5,7 +5,8 @@
     let tasks = $state<Task[]>([])
 
 //FUNCTIONS
-    const add = (newTask: Task) => { // adds new task to tasks
+    const add = (t: string) => { // adds new task to tasks
+        const newTask = {task: t, done: false, edit: false}
         tasks.push(newTask);
     }
     const del = (task: string) => { // deletes task from tasks
