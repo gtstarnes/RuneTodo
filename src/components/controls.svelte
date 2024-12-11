@@ -1,13 +1,21 @@
 <script lang="ts">
 //IMPORTS
+	import { tasks } from "../resources/store.svelte";
+
 //VARIABLES
-    let newTask = $state<string>("add a task...");
+    let input = $state<string>("");
+
+    const add = () => {
+        const newTask = {task: input, done: false, edit: false}
+        tasks.push(newTask)
+        input = "";
+    }
 </script>
 
 <div class="container">
-    <input type=text placeholder="add a task..." bind:value={newTask} />
+    <input type=text placeholder="add a task..." bind:value={input} />
     <div class="controls">
-        <button>Add</button>
+        <button onclick={add}>Add</button>
         <button>Delete All</button>
     </div>
 
@@ -22,6 +30,9 @@
     .controls {
         display: flex;
         width: 15%
+    }
+    button {
+        cursor: pointer;
     }
     input {
         width: 85%;
