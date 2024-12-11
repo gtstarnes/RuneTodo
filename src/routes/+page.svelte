@@ -1,11 +1,14 @@
 <script lang="ts">
+	import Controls from "../components/controls.svelte";
+
 
 </script>
 
-<body>
-
-</body>
+<section>
+    <Controls />
+    <div>Hello</div>
+</section>
 
 <style>
-    
+
 </style>
