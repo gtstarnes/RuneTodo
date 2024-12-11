@@ -3,7 +3,7 @@
 </script>
 
 <div>
-    <input />
+    <input type=text placeholder="add a task" />
     <div>
         <button>Add</button>
         <button>Delete All</button>
