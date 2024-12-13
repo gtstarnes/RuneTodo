@@ -1,25 +1,40 @@
 <script lang="ts">
 //IMPORTS
-	import { tasks } from "../resources/store.svelte";
+	import { add } from "../resources/store.svelte";
 
 //VARIABLES
     let input = $state<string>("");
+    let error = $state<string>("")
 
-    const add = () => {
-        const newTask = {task: input, done: false, edit: false}
-        tasks.push(newTask)
+//FUNCTIONS
+    const addTask = () => {
+        if (!checkErr()) {
+            add(input)
+        }
+        
         input = "";
     }
+    const checkErr = () => {
+        let err = true;
+        if (input === "") {
+            error = "Cannot be blank"
+        } else {
+            err = false
+        }
+        return err
+    }
+
 </script>
 
 <div class="container">
     <input type=text placeholder="add a task..." bind:value={input} />
     <div class="controls">
-        <button onclick={add}>Add</button>
+        <button onclick={addTask}>Add</button>
         <button>Delete All</button>
     </div>
-
 </div>
+<div>{error}</div>
+
 
 <style>
     .container {
