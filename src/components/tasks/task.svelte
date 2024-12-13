@@ -9,10 +9,13 @@
 
 <div>
     <input type="checkbox" bind:checked={done} />
-    <div>{task}</div> 
+    <div class:done={done === true}>{task}</div> 
     <button onclick={()=>del(task)}>Del</button>
 </div>
 
 <style>
-
+ .done {
+    text-decoration: line-through;
+    color: grey;
+ }
 </style>
