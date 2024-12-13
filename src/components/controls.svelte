@@ -1,10 +1,10 @@
 <script lang="ts">
 //IMPORTS
-	import { add } from "../resources/store.svelte";
+	import { add, checkDups} from "../resources/store.svelte";
 
 //VARIABLES
     let input = $state<string>("");
-    let error = $state<string>("")
+    let error = $state<string>("");
 
 //FUNCTIONS
     const addTask = () => {
@@ -18,8 +18,11 @@
         let err = true;
         if (input === "") {
             error = "Cannot be blank"
+        } else if (checkDups(input)){
+            error = "Task already exists"
         } else {
             err = false
+            error = ""
         }
         return err
     }
