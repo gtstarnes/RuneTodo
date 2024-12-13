@@ -12,9 +12,15 @@
     const add = (t:string) => {
         tasks.push({task: t, done: false, edit: false})
     }
+    const checkDoubles = (task: string) => {
+        if (tasks.some(t => t.task === task)) {
+            return true
+        }
+        return false
+    }
 
     export function getTasks() {
         return tasks
     }
 //EXPORTS
-export { del, add }
+export { del, add, checkDoubles }
