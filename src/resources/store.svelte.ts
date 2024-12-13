@@ -12,7 +12,7 @@
     const add = (t:string) => {
         tasks.push({task: t, done: false, edit: false})
     }
-    const checkDoubles = (task: string) => {
+    const checkDups = (task: string) => {
         if (tasks.some(t => t.task === task)) {
             return true
         }
@@ -23,4 +23,4 @@
         return tasks
     }
 //EXPORTS
-export { del, add, checkDoubles }
+export { del, add, checkDups }
