@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { tasks } from "../../resources/store.svelte";
+//IMPORTS
+	import { getTasks } from "../../resources/store.svelte";
 	import Task from "./task.svelte";
-
-
+    
+//VARIABLES
+    let tasks = $derived(getTasks())
 </script>
 
 <div class="container">
